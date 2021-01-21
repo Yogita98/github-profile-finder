@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import MainHeading from "./components/MainHeading";
-import SubHeading from "./components/SubHeading";
-import SearchBar from "./components/SearchBar";
-import ResultContainer from "./components/ResultContainer";
+import MainHeading from "./MainHeading";
+import SubHeading from "./SubHeading";
+import SearchBar from "./SearchBar";
+import ResultContainer from "./ResultContainer";
 
 class App extends React.Component {
   const;
