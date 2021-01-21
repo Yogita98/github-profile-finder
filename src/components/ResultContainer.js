@@ -1,25 +1,26 @@
 import React from "react";
 
 const ResultContainer = (props) => {
-  if (props.userDetails.isUsernameValid) {
+  if (props.isUsernameValid) {
+    // console.log(props.userDetails);
     return (
       <div className="card-container">
         <div className="card">
           <div className="user-details">
-            <img src={props.userDetails.profileURL} />
+            <img alt="user-avatar" src={props.userDetails.avatar_url} />
             <hr />
             <div className="user-details-grid">
               <p className="item1">
                 <em>Name: </em>
-                {props.userDetails.fullName}
+                {props.userDetails.name}
               </p>
               <p className="item2">
                 <em>Repos: </em>
-                {props.userDetails.repos}
+                {props.userDetails.public_repos}
               </p>
               <p className="item3">
                 <em>Twitter: </em>
-                {props.userDetails.twitterAccount}
+                {props.userDetails.twitter_username}
               </p>
               <p className="item4">
                 <em>Location: </em>

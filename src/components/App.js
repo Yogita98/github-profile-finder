@@ -8,11 +8,7 @@ import ResultContainer from "./ResultContainer";
 class App extends React.Component {
   const;
   state = {
-    profileURL: "",
-    fullName: "",
-    repos: "",
-    location: "",
-    twitterAccount: "",
+    userDetails: "",
     showResultComponent: false,
     isUsernameValid: true,
   };
@@ -25,13 +21,9 @@ class App extends React.Component {
         else throw new Error("Username not found");
       })
       .then((userDetails) => {
-        console.log(userDetails);
+        // console.log(userDetails);
         this.setState({
-          profileURL: userDetails.avatar_url,
-          fullName: userDetails.name,
-          repos: userDetails.public_repos,
-          location: userDetails.location,
-          twitterAccount: userDetails.twitter_username,
+          userDetails: userDetails,
           showResultComponent: true,
           isUsernameValid: true,
         });
@@ -49,7 +41,10 @@ class App extends React.Component {
         <SubHeading />
         <SearchBar onSearch={this.onSearchButtonClick} />
         {this.state.showResultComponent && (
-          <ResultContainer userDetails={this.state} />
+          <ResultContainer
+            isUsernameValid={this.state.isUsernameValid}
+            userDetails={this.state.userDetails}
+          />
         )}
       </div>
     );
